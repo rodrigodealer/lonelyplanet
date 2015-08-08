@@ -1,8 +1,6 @@
 require 'nokogiri'
 
 class Parser
-  @document = nil
-  
   def initialize(filename)
     file = File.open(filename)
     @document = Nokogiri::XML(file)
@@ -13,4 +11,6 @@ class Parser
     @document
   end
   
+  def to_taxonomies
+  end  
 end
