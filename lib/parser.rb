@@ -1,7 +1,7 @@
 require 'nokogiri'
 
 class Parser
-  attr_acessor :document
+  attr_accessor :document
   
   def initialize(filename)
     file = File.open(filename)
