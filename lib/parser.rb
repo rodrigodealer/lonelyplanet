@@ -1,14 +1,12 @@
 require 'nokogiri'
 
 class Parser
+  attr_acessor :document
+  
   def initialize(filename)
     file = File.open(filename)
     @document = Nokogiri::XML(file)
     file.close
-  end
-  
-  def document
-    @document
   end
   
   def to_taxonomies
