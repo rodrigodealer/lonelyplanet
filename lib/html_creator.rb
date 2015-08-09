@@ -12,9 +12,9 @@ class HtmlCreator
     @renderer.result(page)
   end
   
-  def write
+  def write(page)
     File.open(@output_file, 'w') do |f|
-      f.write(result)
+      f.write(result(page))
     end
   end
 end
