@@ -8,7 +8,11 @@ RSpec.describe HtmlCreator do
     it 'returns a instance of HtmlCreator' do
       expect(creator).to be_a HtmlCreator
     end
+  end
     
+  describe  '#result' do
+    let(:creator) { HtmlCreator.new('spec/samples/output/sample.html', 'spec/samples/template_sample.html.erb') }
+      
     it 'generate a html based in template and bindings' do
       page = Page.new('some title', 'some body')
       html = creator.result(page.bindings)
