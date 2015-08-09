@@ -3,7 +3,7 @@ require 'parser'
 
 RSpec.describe Page do
   describe  '#initialize' do
-    let(:page) { Page.new('some title', 'some body')}
+    let(:page) { Page.new('some title', 'some body', [], [])}
     it 'creates an instance of Page' do
       expect(page).to be_a Page
     end
