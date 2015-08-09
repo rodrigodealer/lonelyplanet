@@ -8,7 +8,4 @@ class Parser
     @document = Nokogiri::XML(file)
     file.close
   end
-  
-  def to_taxonomies
-  end  
 end

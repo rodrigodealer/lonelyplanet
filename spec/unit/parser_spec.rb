@@ -13,4 +13,8 @@ RSpec.describe Parser do
       expect(parser.document.xpath("//taxonomies//taxonomy//node").size).to be_eql(24)
     end
   end
+  
+  describe '#parse' do
+    let(:parser) { Parser.new('spec/samples/destinations.xml') }
+  end
 end
