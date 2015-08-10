@@ -1,5 +1,6 @@
-require 'parser'
-require 'html_creator'
+require File.join(File.dirname(__FILE__), "parser")
+require File.join(File.dirname(__FILE__), "html_creator")
+require File.join(File.dirname(__FILE__), "page")
 
 class Reader
   attr_accessor :destinations_document
