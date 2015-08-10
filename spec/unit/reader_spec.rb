@@ -26,4 +26,21 @@ RSpec.describe Reader do
       expect(reader.taxonomies.size).to be_eql(reader.taxonomies_document.xpath("//taxonomies//taxonomy//node").size)
     end
   end
+  
+  describe '#process' do
+    before do
+      Dir["output/*.html"].each {|f| FileUtils.rm(f) }
+    end
+    
+    after do
+      Dir["output/*.html"].each {|f| FileUtils.rm(f) }
+    end
+
+    it 'should process the both xml and create 24 html files' do
+      reader = Reader.new('spec/samples/destinations.xml', 'spec/samples/taxonomy.xml')
+      reader.process
+      
+      expect(Dir["output/*.html"].size).to be_eql(24)
+    end
+  end
 end
