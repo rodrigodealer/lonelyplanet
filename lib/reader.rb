@@ -20,7 +20,7 @@ class Reader
   end
   
   def process
-    destinations.each {|destination|
+    destinations.each do |destination|
       title = destination["title"]
       body = destination.css('introductory introduction overview').text
       children = taxonomies_children_of(title).css('node_name').to_a.map{|child| "#{child.text}" } unless taxonomies_children_of(title).nil?
@@ -28,7 +28,7 @@ class Reader
       page = Page.new(title, body, children, parents)
       creator = HtmlCreator.new("output/#{title}.html", "spec/samples/destination.html.erb")
       creator.write(page.bindings)
-    }
+    end
   end
     
   private
