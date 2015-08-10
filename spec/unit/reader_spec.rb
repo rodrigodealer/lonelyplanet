@@ -31,7 +31,7 @@ RSpec.describe Reader do
     before do
       Dir["output/*.html"].each {|f| FileUtils.rm(f) }
     end
-    
+
     after do
       Dir["output/*.html"].each {|f| FileUtils.rm(f) }
     end
@@ -39,7 +39,7 @@ RSpec.describe Reader do
     it 'should process the both xml and create 24 html files' do
       reader = Reader.new('spec/samples/destinations.xml', 'spec/samples/taxonomy.xml')
       reader.process
-      
+
       expect(Dir["output/*.html"].size).to be_eql(24)
     end
   end
