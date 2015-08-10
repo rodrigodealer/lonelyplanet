@@ -15,5 +15,17 @@ RSpec.describe Page do
     it 'instance has a body' do
       expect(page.body).to be_eql('some body')
     end
+    
+    it 'instance has children' do
+      expect(page.children).to be_eql([])
+    end
+    
+    it 'instance has parent' do
+      expect(page.parents).to be_eql([])
+    end
+    
+    it 'has bindings' do
+      expect(page.bindings).to be_a Binding
+    end
   end
 end
